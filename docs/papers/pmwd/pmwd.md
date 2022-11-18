@@ -52,8 +52,8 @@ affiliations:
   - name: Max Planck Institute for Astrophysics, 85748 Garching bei
           München, Germany
     index: 4
-  - name: Department of Physics, New York University, New York, New York
-          10003, USA
+  - name: Center for Cosmology and Particle Physics, Department of
+          Physics, New York University, New York, New York 10003, USA
     index: 5
   - name: Berkeley Center for Cosmological Physics, University of
           California, Berkeley, California 94720, USA
