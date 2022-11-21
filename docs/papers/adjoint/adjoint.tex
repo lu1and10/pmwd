@@ -78,7 +78,7 @@
 
 
 
-\title{\large Differentiable Cosmological Simulation with Adjoint Method
+\title{\large Differentiable Cosmological Simulation with the Adjoint Method
 \vspace{0.3em}}
 
 
@@ -365,8 +365,8 @@ The expansion rate is described by the Hubble parameter $H \triangleq \d
 \ln a / \d t$.
 
 The initial conditions of particles can be set perturbatively when
-$|\vnabla \cdot \vs|$, linear approximation of the density fluctuation,
-is much smaller than 1.
+$|\vnabla \cdot \vs|$, the linear approximation of the density
+fluctuation, is much smaller than 1.
 We compute the initial displacements and momenta using the second order
 Lagrangian perturbation theory \citep[2LPT,][]{BouchetEtAl1995}:
 %
@@ -503,7 +503,7 @@ These form the upper right square of \autoref{fig:model}.
 
 The core of gravitational $N$-body simulation is the gravity solver.
 The gravitational potential sourced by matter density fluctuation
-follows the Poisson equation
+satisfies the Poisson equation
 %
 \begin{equation}
 \nabla^2 \phi(\vx) = \frac32 \frac{\Omegam H_0^2}{a} \delta(\vx),
@@ -544,9 +544,9 @@ partial differential equation becomes an algebraic one in Fourier space:
 - k^2 \varphi(\vk) = \frac32 \Omegam H_0^2 \, \delta(\vk).
 \end{equation}
 %
-And in Fourier space, $- \vnabla \varphi(\vx)$ is just $- i \vk
-\varphi(\vk)$, each component of which can be transformed back and
-combined into the force field.
+In Fourier space, $- \vnabla \varphi(\vx)$ is just $- i \vk
+\varphi(\vk)$, each component of which can be transformed back to obtain
+the force field.
 With 4 (1 forward and 3 inverse) FFTs, we can obtain $- \vnabla
 \varphi(\vx)$ from $\delta(\vx)$, with both on the mesh, efficiently.
 
