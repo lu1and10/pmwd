@@ -1145,9 +1145,9 @@ pattern, which improves with more iterations.
 
 \pmwd\ benefits from GPU accelerations and efficient CUDA
 implementations of scatter and gather operations.
-In \autoref{fig:scaling}, we present weak scaling test of \pmwd, and
-find both the LPT and the $N$-body parts scale well except for very
-small problems.
+In \autoref{fig:perf}, we present performance test of \pmwd, and find
+both the LPT and the $N$-body parts scale well except for very small
+problems.
 The growth function solution has a constant cost, and generally does not
 affect problem of moderate sizes.
 However, for a small number of particles and few time steps, it can
@@ -1157,15 +1157,15 @@ computation with an emulator \citep{KwanModiEtAl2022}.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.7\linewidth]{scaling.pdf}
-\caption{Weak scaling of \pmwd. Both the 2LPT and $N$-body components
+\includegraphics[width=0.7\linewidth]{perf.pdf}
+\caption{Performance of \pmwd. Both the 2LPT and $N$-body components
 scale well from $512^3$ particles to $64^3$ particles, below which they
 become overhead dominated.
 Solving the growth ODEs takes a constant time, and can dominate the cost
 for small numbers of particles and few time steps, but generally does
 not affect problems with more than $128^3$ particles.
 }
-\label{fig:scaling}
+\label{fig:perf}
 \end{figure*}
 
 
