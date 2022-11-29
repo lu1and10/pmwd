@@ -11,6 +11,8 @@ from jax.tree_util import tree_map
 from pmwd.tree_util import pytree_dataclass
 from pmwd.configuration import Configuration
 
+from flax.core.frozen_dict import FrozenDict
+
 
 FloatParam = Union[float, jnp.ndarray]
 
@@ -71,6 +73,8 @@ class Cosmology:
     transfer: Optional[jnp.ndarray] = field(default=None, compare=False)
 
     growth: Optional[jnp.ndarray] = field(default=None, compare=False)
+
+    so_params: Optional[list[FrozenDict]] = None
 
     def __post_init__(self, Omega_k_fixed, w_0_fixed, w_a_fixed):
         if self._is_transforming():
