@@ -674,11 +674,13 @@ $\hat t_j$.
 Given $\vz = (\vx, \vp)$ at $t_{i-1}$ and $t_i$, we can parametrize
 intermediate particle trajectories with cubic Hermite splines.
 Combined with the $\vtheta$-dependent propagation of the light front, we
-can solve for the intersections\footnote{Even analytically if the light
-propagation is also approximated cubically.}, at which we can record the
-observed\footnote{Note that we focus on the dark matter phase space
-here, and leave more generic observable modeling to a future work.}
+can solve for the intersections, at which we can record the observed
 $\hat\vz$.
+The solution can even be analytic if the light propagation is also
+approximated cubically.
+Note that we only ``observe'' the dark matter phase space here, and
+leave more realistic observables to a future work, including the forward
+modeling of real observational effects.
 \autoref{fig:step} illustrates the observation operator $O$ and its
 dependencies on the previous and the current time step.
 
@@ -1294,8 +1296,9 @@ with initial conditions
 We solve the growth equations in $G_n$ instead of $D_n$, with the
 \texttt{JAX} adaptive ODE integrator implementing the adjoint
 method\footnote{The growth equation adjoint method aims to solve the
-ODEs in their continuous limit, this is different from our
-discretize-then-optimize $N$-body adjoint method.}.
+ODEs in their continuous limit, i.e., with the optimize-then-discretize
+approach, this is different from our discretize-then-optimize $N$-body
+adjoint method.}.
 This is because the former can be integrated backward in time more
 accurately for early times, which can improve the adjoint gradients.
 
