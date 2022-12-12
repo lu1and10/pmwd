@@ -149,10 +149,9 @@ A differentiable field-level forward model combines the two features and
 is able to constrain physical parameters together with the initial
 conditions of the Universe.
 
-The first differentiable cosmological simulations, such as BORG and
-ELUCID [@BORG; @ELUCID],
-were developed before the advent of modern AD systems, and were based on
-implementations of analytic derivatives.
+The first differentiable cosmological simulations, such as ELUCID and
+BORG-PM [@ELUCID; @BORG-PM], were developed before the advent of modern
+AD systems, and were based on implementations of analytic derivatives.
 Later codes including `FastPM` and `FlowPM` [@SeljakEtAl2017; @FlowPM]
 compute gradients using AD engines, namely `vmad` (written by the same
 authors) and `TensorFlow`, respectively.
@@ -194,8 +193,8 @@ play.
 
          code      OSS      gradient   mem efficient   hardware
 ------------- ------------ ---------- --------------- ----------
-         BORG               analytic                      CPU
        ELUCID               analytic                      CPU
+      BORG-PM               analytic                      CPU
 `FastPM-vmad` $\checkmark$     AD                         CPU
      `FlowPM` $\checkmark$     AD                       GPU/CPU
       \pmwd{} $\checkmark$   adjoint    $\checkmark$    GPU/CPU
